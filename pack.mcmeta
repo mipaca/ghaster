@@ -1,0 +1,7 @@
+{
+  "pack": {
+    "description": "Ghaster — named happy ghasts (Falkor, Pegasus, Toothless) fly faster when ridden.",
+    "min_format": [121, 0],
+    "max_format": 121
+  }
+}
