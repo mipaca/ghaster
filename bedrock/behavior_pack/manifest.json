@@ -1,0 +1,25 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Ghaster",
+    "description": "Named happy ghasts fly faster while a player is riding them.",
+    "uuid": "368b735f-b367-4090-b990-348b6dd1407a",
+    "version": [26, 1, 0],
+    "min_engine_version": [1, 26, 30]
+  },
+  "modules": [
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "fae2d58e-b259-4644-8595-818883a1e25f",
+      "version": [1, 0, 0],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.0.0"
+    }
+  ]
+}

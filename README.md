@@ -30,6 +30,14 @@ The boost applies only while someone is riding the ghast and ends as soon as the
 2. Put the zip in your world's `datapacks/` folder (or unzip it there as a folder named `ghaster`, so `pack.mcmeta` sits directly inside).
 3. Run `/reload` in game, or reopen the world.
 
+## Bedrock add-on
+
+`bedrock/behavior_pack/` is a Bedrock version of the same idea, using the Script API. It uses the same names and speeds, applied by switching the ghast between speed tiers (it overrides the vanilla `minecraft:happy_ghast` entity) while someone is riding it. Only horizontal speed is boosted.
+
+To install, download `ghaster-<version>.mcaddon` from the [latest release](https://github.com/mipaca/ghaster/releases/latest) and open it with Minecraft, then enable the behavior pack on your world. Turn on Beta APIs only if your game version requires it for `@minecraft/server`.
+
+To check the speeds, run `/tag @s add speedometer` for a blocks-per-second and tier readout on the action bar.
+
 ## Adding a ghast
 
 Edit `data/ghaster/function/tick.mcfunction`. For a new name, add a matching pair of `remove` lines and a pair of `add` lines using a new `ghaster:<name>_boost` modifier ID. See `CLAUDE.md` for details.
