@@ -32,7 +32,7 @@ The boost applies only while someone is riding the ghast and ends as soon as the
 
 ## Bedrock add-on
 
-`bedrock/behavior_pack/` is a Bedrock version of the same idea, using the Script API. It uses the same names and speeds, applied by switching the ghast between speed tiers (it overrides the vanilla `minecraft:happy_ghast` entity) while someone is riding it. Only horizontal speed is boosted.
+`bedrock/behavior_pack/` is a Bedrock version of the same idea, using the Script API. It uses the same names and speeds, applied by switching the ghast between speed tiers (it overrides the vanilla `minecraft:happy_ghast` entity) while someone is riding it. All directions are boosted, including up and back.
 
 To install, download `ghaster-<version>.mcaddon` from the [latest release](https://github.com/mipaca/ghaster/releases/latest) and open it with Minecraft, then enable the behavior pack on your world. Turn on Beta APIs only if your game version requires it for `@minecraft/server`.
 
