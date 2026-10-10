@@ -14,3 +14,7 @@ Desktop.ini
 .vscode/
 *.swp
 *~
+
+# Release builds
+*.mcaddon
+ghaster-*.zip
