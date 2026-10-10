@@ -8,6 +8,14 @@ Pack format 121 (game version 26.x).
 
 Name a happy ghast (with a name tag) to give it a boost. Names are case-sensitive.
 
+| Name       | Tempo  | Speed |
+|------------|--------|-------|
+| `Adagio`   | slow   | 2x    |
+| `Allegro`  | medium | 3x    |
+| `Presto`   | fast   | 4x    |
+
+Or use a character name:
+
 | Name        | Speed |
 |-------------|-------|
 | `Pegasus`   | 2x    |

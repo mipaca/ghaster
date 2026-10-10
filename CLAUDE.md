@@ -19,6 +19,9 @@ Current ghasts and their `add_multiplied_base` values (a value of 3 means 4x bas
 - `Falkor`: 3
 - `Pegasus`: 1
 - `Toothless`: 2
+- `Adagio` (slow): 1
+- `Allegro` (medium): 2
+- `Presto` (fast): 3
 
 To add a ghast, add a remove pair, an add pair, and a matching `ghaster:<name>_boost` modifier ID in `tick.mcfunction`. Names are matched exactly and are case-sensitive.
 
