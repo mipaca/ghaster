@@ -2,7 +2,7 @@
 
 A small Minecraft Java data pack that makes named happy ghasts fly faster while a player is riding them.
 
-Pack format 121 (game version 26.x).
+Tested on Minecraft: Java Edition 1.21.11 through 26.3 (data pack formats 94.1 to 121).
 
 ## Speed boosts
 

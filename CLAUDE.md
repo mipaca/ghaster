@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A small Minecraft Java data pack (pack format 121, game version 26.3) that makes named happy ghasts fly faster when a player is riding them. There is no build, lint, or test tooling. The pack is installed by copying the folder into a world's `datapacks/` directory (so `pack.mcmeta` sits directly inside `datapacks/ghaster`) and run with `/reload`.
+A small Minecraft Java data pack (`pack.mcmeta` declares formats 94.1 to 121, tested on game versions 1.21.11 through 26.3) that makes named happy ghasts fly faster when a player is riding them. There is no build, lint, or test tooling. The pack is installed by copying the folder into a world's `datapacks/` directory (so `pack.mcmeta` sits directly inside `datapacks/ghaster`) and run with `/reload`.
 
 ## Architecture
 

@@ -18,3 +18,6 @@ Desktop.ini
 # Release builds
 *.mcaddon
 ghaster-*.zip
+
+# Modrinth listing text
+modrinth-*.md
