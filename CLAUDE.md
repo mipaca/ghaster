@@ -27,17 +27,20 @@ To add a ghast, add a remove pair, an add pair, and a matching `ghaster:<name>_b
 
 ## Bedrock add-on
 
-`bedrock/behavior_pack/` is a separate Script API port (`scripts/main.js`). It is source for reference and local testing only and is not currently distributed (see the licensing section below). `entities/happy_ghast.json` is a copy of the vanilla entity (format 1.26.30, from Mojang/bedrock-samples) plus `ghaster:mobile_1..3` groups (full copies of `adult_mobile` with `movement` and `flying_speed` scaled by value + 1; exactly one of `adult_immobile`, `adult_mobile` and the three tier groups is active at a time), a `ghaster:tier` property and `ghaster:set_tier_N` events. `ghaster:tier` always reflects the active group (it resets to 0 whenever the ghast goes mobile/immobile), so the script retries every 2 ticks until it matches. Every 2 ticks the script sets each happy ghast's tier from its rider's name (`BOOSTS` map in `main.js`), and 0 when unridden. All directions are boosted, including vertical and backward (confirmed in game), even though `vertical_movement_action` is a fixed value in the entity file. Add a ghast by adding an entry to `BOOSTS`. Re-sync the entity file when vanilla changes. Tested in game for single riders; multi-rider and seat swaps are being tested.
+`bedrock/behavior_pack/` is a separate Script API port (`scripts/main.js`) with no entity files and no copy of any vanilla file. Every 2 ticks the script finds each happy ghast with a named rider (`BOOSTS` map in `main.js`, value N means (N + 1)x) and sets its `minecraft:flying_speed` and `minecraft:movement` components to the base value times that multiple. `movement` has a default to restore from. `flying_speed` does not, so the original is stored in the `ghaster:base_flying` dynamic property (saved with the entity) while a boost is on, and restored and cleared when the rider leaves. Each pass compares the real values instead of trusting stored state, so a ghast left boosted after a reload is corrected. Add a ghast by adding an entry to `BOOSTS`. `/tag @s add speedometer` shows blocks/s plus the live `fly` and `move` values on the action bar.
+
+Tested in game by the user: speeds match the Java pack. Multi-rider, seat swaps, and save/reload while riding are not confirmed. It is released as `ghaster-26.1.mcpack` on the 26.1 GitHub release (not on Modrinth, which is Java-only). The `.mcpack` is a zip with `manifest.json` at its root (not inside a folder), `pack_icon.png`, `scripts/` and `LICENSE`. Double-click import of it did not work on the user's Parallels Windows VM, while copying the folder into `development_behavior_packs` did, so the README documents both. Only rebuild or replace the release asset when the user asks. The first version overrode the vanilla `happy_ghast` entity with a modified copy and was replaced for the licensing reasons below; that copy exists only in git history.
 
 ### Bedrock licensing: do not redistribute Mojang content
 
-The Minecraft EULA and Usage Guidelines allow distributing a "mod" only if it is original and contains no substantial part of Mojang's code or content, and they forbid redistributing alterations of game files. `entities/happy_ghast.json` is a modified copy of the vanilla entity, so **the `.mcaddon` is withdrawn and must not be built, released, or attached to a GitHub release or Modrinth until it no longer ships a copy of a vanilla file.** The source stays in the repo for reference only.
+The Minecraft EULA and Usage Guidelines allow distributing a "mod" only if it is original and contains no substantial part of Mojang's code or content, and they forbid redistributing alterations of game files. The add-on now ships only original files (manifest, script, icon). **Do not reintroduce `entities/happy_ghast.json` or any other copy of a vanilla file.**
 
 Rules for any Bedrock add-on built here:
 - Ship only original files: scripts, manifest, and entity/behavior fragments we wrote ourselves. Do not copy vanilla entities, behaviors, textures, models, sounds, or other files from `bedrock-samples` or the game into a release.
-- Prefer approaches that need no vanilla override (for example, applying motion from the Script API) over editing a copy of `minecraft:happy_ghast`.
-- Before building a `.mcaddon`, check that no file in it is a vanilla copy.
-- Releases need the disclaimer "NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT." and the repo is MIT apart from Mojang-derived files (see `LICENSE` and the README License section).
+- Prefer approaches that need no vanilla override (the Script API component approach above) over editing a copy of `minecraft:happy_ghast`.
+- Before building a `.mcaddon` or `.mcpack`, check that no file in it is a vanilla copy.
+- Releases need the disclaimer "NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT." (see `LICENSE` and the README License section).
+- `pack_icon.png` is AI-generated, like the Java `pack.png`. Do not upload it to a Modrinth page.
 - Distribute the mod only, free of charge, with no pay-to-play or out-of-game content checks.
 
 ## Notes

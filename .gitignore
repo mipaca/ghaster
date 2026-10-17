@@ -17,6 +17,7 @@ Desktop.ini
 
 # Release builds
 *.mcaddon
+*.mcpack
 ghaster-*.zip
 
 # Modrinth listing text
