@@ -40,7 +40,7 @@ Rules for any Bedrock add-on built here:
 - Prefer approaches that need no vanilla override (the Script API component approach above) over editing a copy of `minecraft:happy_ghast`.
 - Before building a `.mcaddon` or `.mcpack`, check that no file in it is a vanilla copy.
 - Releases need the disclaimer "NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT." (see `LICENSE` and the README License section).
-- `pack_icon.png` is AI-generated, like the Java `pack.png`. Do not upload it to a Modrinth page.
+- `pack_icon.png` and the Java `pack.png` are the same hand-made Photoshop image (replaced the earlier AI-generated icons on 2026-10-19), so Modrinth's ban on AI-generated images no longer applies to them.
 - Distribute the mod only, free of charge, with no pay-to-play or out-of-game content checks.
 
 ## Notes
